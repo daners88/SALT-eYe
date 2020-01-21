@@ -65,11 +65,11 @@ public class GameManager : MonoBehaviour
                 difficultyTimeCheck = 0f;
             }
             timeHolder += Time.deltaTime;
-            if (timeHolder >= spawnSpeed * difficultyMultiplier)
+            if (timeHolder >= spawnSpeed)
             {
                 timeHolder = 0f;
                 int slotToTry = rand.Next(0, spawnSlots.Count);
-                if (slotsFilled[slotToTry].x == 0 || Time.time - slotsFilled[slotToTry].y >= delayTime * difficultyMultiplier)
+                if (slotsFilled[slotToTry].x == 0 || Time.time - slotsFilled[slotToTry].y >= delayTime)
                 {
                     var spawnSlot = spawnSlots[slotToTry];
                     Vector3 pos = new Vector3();

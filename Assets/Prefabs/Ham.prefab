@@ -107,3 +107,5 @@ MonoBehaviour:
   Name: Ham
   saltLevel: 0
   wantsSalt: 1
+  reductionTime: 7.5
+  indicator: {fileID: 0}

@@ -13,10 +13,8 @@ public class FoodSlot : MonoBehaviour
     int saltNeeded = 50;
 
     public GameObject indicator = null;
+    public Material red, yellow, green, clear;
 
-    Color green = Color.green;
-    Color yellow = Color.yellow;
-    Color red = Color.red;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +36,7 @@ public class FoodSlot : MonoBehaviour
             if (!GameManager.Instance.running)
             {
 
-                indicator.GetComponent<UnityEngine.UI.Image>().color = Color.clear;
+                indicator.GetComponent<MeshRenderer>().material = clear;
                 saltLevel = 0;
             }
             else
@@ -56,12 +54,12 @@ public class FoodSlot : MonoBehaviour
                 {
                     if (saltLevel > 0)
                     {
-                        indicator.GetComponent<UnityEngine.UI.Image>().color = red;
+                        indicator.GetComponent<MeshRenderer>().material = red;
                         lookingGood = false;
                     }
                     else
                     {
-                        indicator.GetComponent<UnityEngine.UI.Image>().color = green;
+                        indicator.GetComponent<MeshRenderer>().material = green;
                         lookingGood = true;
                     }
                 }
@@ -69,17 +67,17 @@ public class FoodSlot : MonoBehaviour
                 {
                     if (saltLevel < saltNeeded)
                     {
-                        indicator.GetComponent<UnityEngine.UI.Image>().color = yellow;
+                        indicator.GetComponent<MeshRenderer>().material = yellow;
                         lookingGood = false;
                     }
                     else if (saltLevel > saltNeeded)
                     {
-                        indicator.GetComponent<UnityEngine.UI.Image>().color = red;
+                        indicator.GetComponent<MeshRenderer>().material = red;
                         lookingGood = false;
                     }
                     else
                     {
-                        indicator.GetComponent<UnityEngine.UI.Image>().color = green;
+                        indicator.GetComponent<MeshRenderer>().material = green;
                         lookingGood = true;
                     }
                 }
